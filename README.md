@@ -61,13 +61,13 @@ graph TB
     B --> C[📋 Seleciona Menu/Categoria]
     C --> D[📦 Escolhe Submenu/Produto]
     D --> E[🎫 Abre Ticket de Compra]
-    E --> F[💵 Clica em "Gerar PIX"]
+    E --> F[💵 Clica em Gerar PIX]
     F --> G{🤖 Bot gera QR Code<br/>e Código PIX com Valor}
     G --> H[💳 Usuário realiza o pagamento]
     H --> I{🔍 Bot verifica o<br/>pagamento via API}
-    I -- Aprovado --> J[🔑 **ENVIO AUTOMÁTICO**<br/>Bot busca Key no DB<br/>e envia na DM]
+    I -->|Aprovado| J[🔑 ENVIO AUTOMÁTICO<br/>Bot busca Key no DB<br/>e envia na DM]
     J --> K[✅ Ticket é fechado<br/>conforme tempo definido]
-    I -- Pendente/Erro --> L[⏳ Aguarda ou informa o erro]
+    I -->|Pendente/Erro| L[⏳ Aguarda ou informa o erro]
     
     style A fill:#5865F2,stroke:#fff,stroke-width:2px,color:#fff
     style I fill:#00B1EA,stroke:#fff,stroke-width:2px,color:#fff
@@ -84,7 +84,7 @@ graph TB
 5. **💵 Pagamento**: Dentro do ticket, o usuário clica no botão para gerar o pagamento PIX com o valor configurado.
 6. **🤖 Automação**: O bot se comunica com o Mercado Pago e exibe o QR Code e o código "copia e cola".
 7. **🔍 Verificação**: O bot monitora o status do pagamento em tempo real.
-8. **🔑 Entrega Automática**: Assim que o pagamento é aprovado, o bot **automaticamente** busca uma key válida no banco de dados (usando produto_id) e a envia na mensagem direta (DM) do usuário.
+8. **🔑 Entrega Automática**: Assim que o pagamento é aprovado, o bot automaticamente busca uma key válida no banco de dados (usando produto_id) e a envia na mensagem direta (DM) do usuário.
 9. **✅ Finalização**: O bot envia uma confirmação no ticket e o fecha conforme o tempo de entrega configurado.
 
 </details>
@@ -147,7 +147,7 @@ graph TD
 └── 📖 README.md               # Esta documentação
 ```
 
-## ⚡ Instalação e Configuração
+## ⚡ Configuração
 
 ### 📋 Pré-requisitos
 
@@ -155,23 +155,6 @@ graph TD
 - **Git**
 - **🤖 Conta de Desenvolvedor Discord**
 - **💳 Conta no Mercado Pago**
-
-### 🚀 Instalação em 4 Passos
-
-```bash
-# 1️⃣ Clone o repositório
-git clone https://github.com/Ansbach-0/Mymy-Bot.git
-cd Mymy-Bot
-
-# 2️⃣ Instale as dependências
-pip install -r requirements.txt
-
-# 3️⃣ Configure as variáveis de ambiente
-# Crie um arquivo .env dentro da pasta 'config/'
-
-# 4️⃣ Execute o bot
-python main.py
-```
 
 ### 🔧 Configuração do Ambiente (config/.env)
 
@@ -223,7 +206,7 @@ O **Mymy Bot** foi projetado para funcionar de forma **completamente automatizad
 - ✅ **Confirmação automática**: Notifica sobre a entrega e fecha o ticket
 - ✅ **Logs automáticos**: Registra toda a transação para auditoria
 
-**Nenhuma intervenção manual é necessária!** O sistema funciona 24/7.
+Nenhuma intervenção manual é necessária. O sistema funciona 24/7.
 
 ### 📊 Estrutura de Produtos
 
