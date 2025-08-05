@@ -184,7 +184,7 @@ ADMIN_ROLE_ID=ID_DO_CARGO_ADMIN_AQUI
 | `/aviso` | Envia um aviso customizado. | `/aviso titulo:"Manutenção" msg:"Em 10min"` |
 | `/enviar_key` | **⚠️ APENAS para correções manuais** - Envia key quando há falhas no sistema automático. | `/enviar_key usuario:@user produto:"Minecraft"` |
 
-> **🔥 IMPORTANTE**: O sistema de entrega é **100% automático**! O comando `/enviar_key` existe apenas como backup para situações excepcionais onde o envio automático falhar por algum erro técnico.
+>  O sistema de entrega é 100% automático! O comando `/enviar_key` existe apenas como backup para situações excepcionais onde o envio automático falhar por algum erro técnico.
 
 ### 🛒 Fluxo do Usuário
 
